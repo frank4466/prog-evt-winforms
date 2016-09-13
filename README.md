@@ -6,7 +6,7 @@ Ce livre est un support de cours du module "Génie logiciel" enseigné à l'[Eco
 
 ## Résumé
 
-TODO
+Ce livre aborde la programmation évènementielle et son application dans le cadre de la technologie Microsoft WinForms.
 
 ## Pré-requis
 
