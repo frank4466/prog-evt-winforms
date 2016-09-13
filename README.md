@@ -2,7 +2,7 @@
 
 Ce livre est un support de cours du module "Génie logiciel" enseigné à l'[Ecole Nationale Supérieure de Cognitique](http://www.ensc.fr).
 
-![](ensc-logo.png]
+![](ensc-logo.png)
 
 ## Résumé
 
