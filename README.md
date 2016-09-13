@@ -1,2 +1,2 @@
-# prog-evenementielle
-Support de cours du module "Génie logiciel" à l'ENSC
+# Programmation évènementielle avec les WinForms
+
