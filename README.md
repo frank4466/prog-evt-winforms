@@ -12,6 +12,7 @@ Ce livre aborde la programmation évènementielle et son application dans le cad
 * La technologie WinForms.
 * Les principaux contrôles WinForms.
 * Lecture et écriture dans des fichiers.
+* Gestion des erreurs.
 * WinForms et multithreading.
 
 ## Pré-requis
