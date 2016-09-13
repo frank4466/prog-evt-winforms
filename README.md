@@ -6,7 +6,13 @@ Ce livre est un support de cours du module "Génie logiciel" enseigné à l'[Eco
 
 ## Résumé
 
-Ce livre aborde la programmation évènementielle et son application dans le cadre de la technologie Microsoft WinForms.
+Ce livre aborde la programmation évènementielle et son application dans le cadre de la technologie [Microsoft WinForms](https://msdn.microsoft.com/en-us/library/dd30h2yb(v=vs.110.aspx).
+
+* Paradigme de programmation évènementielle.
+* La technologie WinForms.
+* Les principaux contrôles WinForms.
+* Lecture et écriture dans des fichiers.
+* WinForms et multithreading.
 
 ## Pré-requis
 
