@@ -20,7 +20,7 @@ static void Main(string[] args)
 }
 ```
 
-Ce programme est écrit selon le paradigme de programmation séquentielle. A partir du point d'entrée (ici la méthode statique `Main`), ses instructions se déroulent toujours dans le même ordre prévu à l'avance. L'utilisateur fait ce que lui demande le programme : c'est ce dernier qui a le contrôle.
+Ce programme est écrit selon le paradigme de programmation séquentielle. A partir du point d'entrée (ici la méthode statique `Main`), ses instructions se déroulent toujours dans le même ordre prévu à l'avance. L'utilisateur fait ce que lui demande l'application : c'est ce dernier qui a le contrôle.
 
 ![](../images/prog-sequentielle.png)
 
@@ -28,6 +28,10 @@ Un programme écrit selon le paradigme évènementiel fonctionne différemment :
 
 ![](../images/prog-evenementielle.png)
 
-La programmation évènementielle s'oppose donc à la programmation séquentielle. Elle est utilisée pour gérer des interactions riches avec l'utilisateur, comme celles des interfaces graphiques homme-machine (GUI, *Graphical User Interface*).
+La programmation évènementielle s'oppose donc à la programmation séquentielle. Elle est notamment utilisée pour gérer des interactions riches avec l'utilisateur, comme celles des interfaces graphiques homme-machine (GUI, *Graphical User Interface*).
 
-## Les types d'évènements
+## Les évènements
+
+La programmation évènementielle est fondée sur les **évènements**. Un évènement représente un message envoyé à l'application. Les évènements peuvent être d'origines diverses : action de utilisateur (déplacement de la souris, clic sur un bouton, appui sur une touche du clavier, etc) ou évènement système (chargement d'un fichier, déclenchement d'une minuterie, etc).
+
+Le plus souvent, un évènement contient des informations qui dépendent du type d'évènement. Ces données peuvent être utilisées par l'application pour réagir au mieux. Elle shosit les évènements auxquels elle va répondre et ignore tous les autres.
