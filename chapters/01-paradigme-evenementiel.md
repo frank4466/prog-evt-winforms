@@ -8,8 +8,22 @@ L'objectif de ce chapitre est de découvrir les grands principes de la programma
 
 Prenons l'exemple d'un programme très simple écrit en C#.
 
-~~~csharp
-~~~
+```csharp
+static void Main(string[] args)
+{
+    string saisie;
+    Console.WriteLine("Entrez une valeur");
+    saisie = Console.ReadLine();
+    int valeur = Convert.ToInt32(saisie);
+    int carre = valeur * valeur;
+    // ...
+}
+```
 
+Ce programme est écrit selon le paradigme de programmation séquentielle. A partir du point d'entrée (ici la méthode statique `Main`), ses instructions se déroulent toujours dans le même ordre prévu à l'avance. L'utilisateur fait ce que lui demande le programme : c'est ce dernier qui a le contrôle.
 
+![](../images/prog-sequentielle.png)
 
+Un programme écrit selon le paradigme évènementiel fonctionne différemment : il *réagit* à des évènements provenant du système ou de l'utilisateur. L'ordre d'exécution des instructions n'est donc plus prévu à l'avance. C'est l'utilisateur qui a le contrôle du programme.
+
+![](../images/prog-evenementielle.png)
