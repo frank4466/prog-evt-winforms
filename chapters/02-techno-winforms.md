@@ -62,7 +62,7 @@ Il s'agit de la définition d'une classe avec son constructeur. On remarque la p
 
 Un double-clic sur le formulaire dans l'arborescence déclenche l'apparition du concepteur de formulaire. Cette interface va permettre d'éditer l'apparence du formulaire. Nous en reparlerons plus loin.
 
-![](../images/concepteur-form.jpg)
+![](../images/concepteur-form.png)
 
 TODO
 

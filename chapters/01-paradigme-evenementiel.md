@@ -1,4 +1,4 @@
-# A la découverte de la programmation évènementielle
+# La programmation évènementielle
 
 L'objectif de ce chapitre est de découvrir les grands principes de la programmation évènementielle.
 
