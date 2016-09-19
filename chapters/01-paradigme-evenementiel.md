@@ -27,3 +27,7 @@ Ce programme est écrit selon le paradigme de programmation séquentielle. A par
 Un programme écrit selon le paradigme évènementiel fonctionne différemment : il *réagit* à des évènements provenant du système ou de l'utilisateur. L'ordre d'exécution des instructions n'est donc plus prévu à l'avance. C'est l'utilisateur qui a le contrôle du programme.
 
 ![](../images/prog-evenementielle.png)
+
+La programmation évènementielle s'oppose donc à la programmation séquentielle. Elle est utilisée pour gérer des interactions riches avec l'utilisateur, comme celles des interfaces graphiques homme-machine (GUI, *Graphical User Interface*).
+
+## Les types d'évènements
