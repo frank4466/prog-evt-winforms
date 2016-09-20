@@ -51,7 +51,7 @@ Pour effectuer une demande de confirmation avant la fermeture, il faut ajouter u
 
 ```csharp
 // Gère la fermeture du formulaire par l'utilisateur
-private void MainForm_FormClosing(object stArgs e)
+private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 {
     if (MessageBox.Show("Etes-vous sûr(e) ?", "Demande de confirmation",
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -61,13 +61,44 @@ private void MainForm_FormClosing(object stArgs e)
 }
 ```
 
-Si l'utilisateur répond `Non` à la demande de confirmation, la propriété `Cancel` de l'objet `
+![](../images/exit-confirm.png)
+
+la méthode `Show` renvoie son résultatsous la forme d'une valeur de type `DialogResult`. Si l'utilisateur répond `Non` (valeur `DialogResult.No`) à la demande de confirmation , la propriété `Cancel` de l'objet `FormClosingEventArgs` est définie à `true` pour annuler la fermeture. Sinon, l'application s'arrête.
+
+> L'appel à `Application.Exit()` depuis un gestionnaire d'évènement déclenche l'évènement **FormClosing** et donc la demande de confirmation. 
 
 ## Afficher un formulaire
 
-### De façon non modale
+Une application WinForms se compose le plus souvent de plusieurs formulaires ayant des rôles différents.
 
-### De façon modale
+L'affichage d'un formulaire peut se faire de façon modale ou non modale. Un formulaire **modal** doit être fermé ou masqué avant de pouvoir utiliser de nouveau le reste de l'application. C'est le cas des formulaire de type boîte de dialogue qui permettent d'interroger l'utilisateur avant de poursuivre le déroulement de l'application.
+
+### Formulaire non modal
+
+On affiche un formulaire non modal en instanciant un objet de la classe correspondante, puis en appelant la méthode `Show` sur cet objet.
+
+```csharp
+// Affiche le formulaire SubForm (non modal)
+SubForm subForm = new SubForm();
+subForm.Show();
+```
+
+### Formulaire modal
+
+On affiche un formulaire modal en l'instanciant, puis en appelant sa méthode `ShowDialog`. Comme la méthode `MessageBox.Show`, elle renvoie un résultat de type `DialogResult` qui permet de connaître le choix de l'utilisateur.
+
+```csharp
+// Affiche le formulaire SubForm (modal)
+SubForm subForm = new SubForm();
+if (subForm.ShowDialog() == DialogResult.OK)
+{
+    // ...
+}
+```
+
+Pour que cela fonctionne, il faut ajouter au formulaire modal au moins un bouton, puis avoir défini la propriété `DialogResult` de ce bouton. La valeur de cette propriété est renvoyée par la méthode `ShowDialog` lorsque l'utilisateur clique sur le bouton associé du formulaire modal.
+
+![](../images/form-modal.png)
 
 ## Supprimer manuellement un gestionnaire d'évènement
 
