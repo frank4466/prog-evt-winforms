@@ -21,6 +21,10 @@ L'étude des exemples de code de ce livre nécessite une connaissance minimale d
 
 > Au besoin, consultez le livre [Programmation orientée objet en C#](https://bpesquet.gitbooks.io/programmation-orientee-objet-csharp/content/).
 
+## Remerciements
+
+Certains éléments et illustrations sont empruntés à d'autres supports, notemment ceux de mon collègue David Duron.
+
 ## Contributions
 
 Ce livre est publié sous la licence Creative Commons [BY-NC-SA](http://creativecommons.org/licenses/by-nc-sa/4.0/). Son code source est disponible sur [GitHub](https://github.com/bpesquet/prog-evt-winforms). N'hésitez pas à contribuer à son amélioration en utilisant les *issues* pour signaler des erreurs et les *pull requests* pour proposer des ajouts ou des corrections.
