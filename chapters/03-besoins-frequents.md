@@ -96,12 +96,74 @@ if (subForm.ShowDialog() == DialogResult.OK)
 }
 ```
 
-Pour que cela fonctionne, il faut ajouter au formulaire modal au moins un bouton, puis avoir défini la propriété `DialogResult` de ce bouton. La valeur de cette propriété est renvoyée par la méthode `ShowDialog` lorsque l'utilisateur clique sur le bouton associé du formulaire modal.
+Pour que cela fonctionne, il faut ajouter au formulaire modal au moins un bouton, puis avoir défini la propriété `DialogResult` de ce bouton. La valeur de cette propriété est renvoyée par la méthode `ShowDialog` lorsque l'utilisateur clique sur le bouton associé du formulaire modal. 
 
 ![](../images/form-modal.png)
 
+Si le formulaire modal contient plusieurs boutons avec une propriété `DialogResult` définie et différente pour chacun d'eux, la valeur renvoyée par `ShowDialog` permet d'identifier celui sur lequel l'utilisateur a cliqué.
+
+## Echanger des données entre formulaires
+
+### Fournir des données à un formulaire
+
+La manière la plus simple de fournir des données à un formulaire est de modifier son constructeur pour qu'il accepte des paramètres. Dans l'exemple ci-dessous, le constructeur du formulaire utilise la chaîne reçue en paramètre pour définir le texte affiché par un label.
+
+```csharp
+public partial class SubForm : Form
+{
+    public SubForm(string message)
+    {
+        InitializeComponent();
+        inputLbl.Text = message;
+    }
+    // ...
+```
+
+Les formulaires sont des classes C# et peuvent donc comporter des attributs en plus des contrôles. La valeur de ces attributs peut être définie dans le constructeur ou par le biais d'accesseurs en écriture (mutateurs).
+
+### Récupérer une donnée depuis un formulaire
+
+Les contrôles contenus dans un formulaire sont gérés sous la forme d'attributs privés. On ne peut donc pas y accéder en dehors de la classe.
+
+Pour pouvoir récupérer une propriété d'un contrôle depuis l'extérieur, on peut ajouter à la classe un accesseur qui renvoie cette valeur. Dans l'exemple ci-dessous, la propriété `Input` renvoie le texte saisi dans la **TextBox** nommée `inputBox`.
+
+```csharp
+public partial class SubForm : Form
+{
+    // ...
+    public string Input 
+    {
+        get { return inputBox.Text; }
+    }
+}
+```
+
+Ainsi, on peut récupérer et utiliser la valeur saisie dans le formulaire d'origine. L'exemple ci-dessous modifie le titre de la fenêtre du formulaire appelant. 
+
+```csharp
+SubForm subForm = new SubForm("Entrez votre login");
+if (subForm.ShowDialog() == DialogResult.OK)
+{
+    string login = subForm.Input;
+    this.Text = "Bienvenue, " + login;
+}
+```
+
 ## Supprimer manuellement un gestionnaire d'évènement
 
-La suppression manuelle de telles lignes dans le fichier `.Designer.cs` est parfois nécessaire, notamment lorsqu'on a généré des gestionnaires d'évènements pour un contrôle avant de le renommer.
+Le fichier `.Designer.cs` associé à un formulaire est normalement géré automatiquement par Visual Studio. Il est cependant parfois nécessaire d'y intervenir manuellement.
+
+Lorsqu'on a généré des gestionnaires d'évènements pour des contrôles avant de les renommer, on aboutit parfois à des gestionnaires d'évènements obsolètes et inutiles dans le fichier `.cs` d'un formulaire.
+
+La suppression d'un tel gestionnaire d'évènement se fait en deux étapes :
+
+* Supprimer la ligne qui ajoute le gestionnaire d'évènement au contrôle dans le fichier `.Designer.cs`. Cette ligne est du type `this.nomCtrl.nomEvenement += new System.EventHandler(nomGestionnaire)`. 
+* Supprimer la méthode correspondant au gestionnaire dans le fichier `.cs`.
 
 ## Vérifier les noms des contrôles d'un formulaire
+
+Nous avons vu précédemment qu'il était important de renommer systématiquement les contrôles ajoutés à un formulaire.
+
+Pour vérifier tous les noms des contrôles, il suffit d'utiliser la liste déroulante de la zone des propriétés dans le concepteur de formulaire. On détecte immédiatement les contrôles qui n'ont pas été renommés.
+
+![](../images/ctrl-names.png)
