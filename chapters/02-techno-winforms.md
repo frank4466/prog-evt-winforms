@@ -88,7 +88,7 @@ Chaque contrôle dispose d'un grand nombre de propriétés qui gouvernent son ap
 
 > Tout comme le nom d'un formulaire, celui d'un contrôle doit être immédiatement modifié avec une valeur plus parlante. 
 
-Par exemple, donnons à notre nouveau bouton le nom `helloBtn` et le texte `Cliquez-moi !`. Donnons également à notre formulaire le titre `Hello World` (propriété **Text** du formulaire).
+Par exemple, donnons à notre nouveau bouton le nom `helloBtn` et le texte `Cliquez-moi !`. Donnons également à notre formulaire le titre `Bienvenue` (propriété **Text** du formulaire).
 
 ![](../images/props-btn.png)
 
@@ -134,13 +134,13 @@ La méthode statique `Show` de la classe `MessageBox` affiche un message à l'ut
 
 Voici le résultat d'un clic sur le bouton du formulaire, une fois l'application exécutée.
 
-![](../images/evt-btn-clic.png)
+![](../images/evt-btn-clic.jpg)
 
 ### Gestion des gestionnaires
 
 Dans le concepteur de formulaire, la zone des propriétés permet de gérer les évènements associés à un contrôle (ou au formulaire lui-même). Un clic sur le petit bouton en forme d'éclair affiche la liste de tous les évènements que l'élément peut générer, ainsi que les gestionnaires d'évènements ajoutés.
 
-![](../images/evts-btn.png)
+![](../images/evt-btn.png)
 
 Le lien entre le contrôle et le gestionnaire se fait dans le fichier `.Designer.cs`. Son contenu est complexe et géré par Visual Studio, mais on peut tout de même le consulter pour y trouver le code ci-dessous.
 
