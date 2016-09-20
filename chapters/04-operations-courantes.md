@@ -1,4 +1,4 @@
-# Besoins fréquents avec les WinForms
+# Opérations courantes avec les WinForms
 
 Ce chapitre rassemble les solutions à des besoins courants lorsqu'on développe une application WinForms.
 
