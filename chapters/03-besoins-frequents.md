@@ -37,7 +37,31 @@ Voici l'exemple d'un bouton attaché à la bordure gauche de son conteneur.
 
 ![](../images/redim-dock.png)
 
-## Gérer la sortie de l'application
+## Gérer l'arrêt de l'application
+
+### Déclencher l'arrêt
+
+Une application dont le programme principal contient une ligne du type `Application.Run(new MainForm())` se termine automatiquement lorsque l'utilisateur décide de fermer le formulaire `MainForm`.
+
+Depuis un gestionnaire d'évènement, le même résultat s'obtient avec la commande `Application.Exit()`.
+
+### Confirmer l'arrêt
+
+Pour effectuer une demande de confirmation avant la fermeture, il faut ajouter un gestionnaire pour l'évènement **FormClosing** du formulaire. Dans ce gestionnaire, on peut afficher un message puis récupérer le choix de l'utilisateur.
+
+```csharp
+// Gère la fermeture du formulaire par l'utilisateur
+private void MainForm_FormClosing(object stArgs e)
+{
+    if (MessageBox.Show("Etes-vous sûr(e) ?", "Demande de confirmation",
+        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+    {
+        e.Cancel = true;
+    }
+}
+```
+
+Si l'utilisateur répond `Non` à la demande de confirmation, la propriété `Cancel` de l'objet `
 
 ## Afficher un formulaire
 
