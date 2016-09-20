@@ -1,2 +1,0 @@
-# Principaux contrôles WinForms
-
