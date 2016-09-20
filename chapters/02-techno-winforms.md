@@ -16,9 +16,7 @@ Lorsqu'on crée une nouvelle application WinForms, l'IDE Visual Studio génère 
 
 ![](../images/app-winforms.jpg)
 
-Les fichiers du répertoire `Properties` sont gérés par Visual Studio. Il ne doivent pas être édités manuellement.
-
-Etudions en détail le reste de l'arborescence
+Les fichiers du répertoire `Properties` sont gérés par Visual Studio. Il ne doivent pas être édités manuellement. Etudions en détail le reste de l'arborescence.
 
 ### Programme principal
 
@@ -44,7 +42,7 @@ Chaque formulaire WinForms est décrit par deux fichiers :
 
 > Après chaque création de formulaire, une bonne pratique consiste à lui donner immédiatement un nom plus parlant, par exemple `MainForm` pour le formulaire principal. Pour cela, faites un clid droit sur le formulaire dans l'arborescence, puis choisissez **Renommer**.
 
-Le fichier "code behind" `.cs` associé à un formulaire est accessible par clic droit sur le formulaire puis **Afficher le code**, ou à l'aide du raccourci clavier **F7**. Voici son contenu initial.
+Le fichier "code behind" `.cs` associé à un formulaire est accessible en faisant un clic droit sur le formulaire puis en choisissant **Afficher le code**, ou à l'aide du raccourci clavier **F7**. Voici son contenu initial.
 
 ```csharp
 public partial class MainForm : Form
@@ -56,7 +54,7 @@ public partial class MainForm : Form
 }
 ```
 
-Il s'agit de la définition d'une classe avec son constructeur. On remarque la présence du mot-clé `partial`. Il indique que seul une partie du code de la classe est présent dans ce fichier. Le reste se trouve, comme vous l'avez deviné, dans le fichier `.Designer.cs`.
+Il s'agit de la définition d'une classe avec son constructeur. Cette classe hérite de la classe `Form`, définie par le framework .NET et qui rassemble les fonctionnalités communes à tous les formulaires. On remarque la présence du mot-clé `partial`. Il indique que seul une partie du code de la classe est présent dans ce fichier. Le reste se trouve, comme vous l'avez deviné, dans le fichier `.Designer.cs`.
 
 ## Edition graphique d'un formulaire
 
@@ -66,9 +64,14 @@ Un double-clic sur le formulaire dans l'arborescence déclenche l'apparition du 
 
 ### Ajout d'un contrôle
 
-L'édition du formulaire se fait en y glissant/déposant des **contrôles**, rassemblées dans une boîte à outils (liste de gauche). 
+L'édition du formulaire se fait en y glissant/déposant des **contrôles**, rassemblées dans une boîte à outils (liste de gauche). De nombreux contrôles sont disponibles pour répondre à des besoins variés et construire des IHM riches et fonctionnelles. Parmi les plus utilisés, on peut citer :
 
-> Les principaux contrôles WinForms seront décrits dans un [prochain chapitre](03-controles-winforms.md).
+* **Label** qui affiche un simple texte;
+* **TextBox** qui crée une zone de saisie de texte;
+* **Button** qui affiche un bouton;
+* **ListBox** qui regroupe une liste de valeurs.
+
+> Pour découvrir le comportement d'un contrôle, testez-le !
 
 Par exemple, l'ajout d'un bouton au formulaire se fait en cliquant sur le contrôle "Button" dans la boîte à outils, puis en faisant glisser le contrôle vers le formulaire.
 
@@ -130,7 +133,7 @@ private void helloBtn_Click(object sender, EventArgs e)
 }
 ```
 
-La méthode statique `Show` de la classe `MessageBox` affiche un message à l'utilisateur sous la forme d'une boîte de dialogue *modale*. Plusieurs surcharges de cette méthode permettent de paramétrer l'apparence du message (texte, titre, boutons, icône).
+La méthode statique `Show` de la classe `MessageBox` affiche un message à l'utilisateur. Plusieurs surcharges de cette méthode permettent de paramétrer l'apparence du message (texte, titre, boutons, icône).
 
 Voici le résultat d'un clic sur le bouton du formulaire, une fois l'application exécutée.
 
@@ -169,6 +172,4 @@ partial class MainForm
 }
 ```
 
-L'attribut privé `helloBtn` correpond au bouton ajouté au formulaire. Il est instancié dans la méthode `InitializeComponent`, appelée par le constructeur du formulaire (voir plus haut). Ensuite, on lui ajoute (opérateur `+=`) le gestionnaire `helloBtn_Click` pour l'évènement `Click`.
-
-> La suppression manuelle de telles lignes dans le fichier `.Designer.cs` est parfois nécessaire, notamment lorsqu'on a généré des gestionnaires d'évènements pour un contrôle avant de le renommer.
+L'attribut privé `helloBtn` correspond au bouton ajouté au formulaire. Il est instancié dans la méthode `InitializeComponent`, appelée par le constructeur du formulaire (voir plus haut). Ensuite, on lui ajoute (opérateur `+=`) le gestionnaire `helloBtn_Click` pour l'évènement `Click`.
