@@ -1,9 +1,20 @@
 # Principaux contrôles WinForms
 
-Label
-Button
-TextBox
-ComboBox
-ListCtrl
-MenuStrip
+L'objectif de ce chapitre est de présenter quelques contrôles WinForms parmi les plus utilisés.
+
+> D'autres contrôles plus spécialisés seront présentés plus loin.
+
+## Le contrôle Label
+
+
+
+## Le contrôle Button
+
+## Le contrôle TextBox
+
+## Le contrôle ComboBox
+
+## Le contrôle ListCtrl
+
+## Le contrôle MenuStrip
 

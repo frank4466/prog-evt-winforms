@@ -20,7 +20,7 @@ Ce livre aborde la programmation évènementielle et son application dans le cad
 
 L'étude des exemples de code de ce livre nécessite une connaissance minimale de la programmation orientée objet et du langage C#.
 
-> Au besoin, consultez le livre [Programmation orientée objet en C#](https://bpesquet.gitbooks.io/programmation-orientee-objet-csharp/content/).
+> Au besoin, consultez le livre [Programmation orientée objet en C#](https://www.gitbook.com/book/bpesquet/programmation-orientee-objet-csharp/).
 
 ## Remerciements
 

@@ -1,6 +1,6 @@
 # Opérations courantes avec les WinForms
 
-Ce chapitre rassemble les solutions à des besoins courants lorsqu'on développe une application WinForms.
+L'objectif de ce chapitre est de rassembler les solutions à des besoins courants lorsqu'on développe une application WinForms.
 
 ## Gérer le redimensionnement d'un formulaire
 
