@@ -24,7 +24,7 @@ L'étude des exemples de code de ce livre nécessite une connaissance minimale d
 
 ## Remerciements
 
-Certains éléments et illustrations sont empruntés à d'autres supports, notemment ceux de mon collègue David Duron.
+Certains éléments et illustrations sont empruntés à d'autres supports, notemment ceux de mes collègues David Duron et Jean-Marc Salotti.
 
 ## Contributions
 
