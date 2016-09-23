@@ -2,6 +2,17 @@
 
 L'objectif de ce chapitre est de rassembler les solutions à des besoins courants lorsqu'on développe une application WinForms.
 
+## Positionner un contrôle
+
+Le concepteur de formulaire permet de placer précisément un contrôle sur un formulaire. La barre d'outils **Disposition** offre des fonctionnalités avancées pour le positionnement :
+
+* Alignement de contrôles
+* Centrage horizontal et vertical
+* Uniformisation de l'espace entre plusieurs contrôles.
+* ...
+
+![](../images/barre dispo.png)
+
 ## Gérer le redimensionnement d'un formulaire
 
 Une IHM réussie doit adapter sa présentation à la taille de sa fenêtre, notamment lorsque celle-ci est redimensionnée par l'utilisateur.
