@@ -6,4 +6,5 @@
 * [Principaux contrôles WinForms](chapters/03-controles-winforms.md)
 * [Opérations courantes avec les WinForms](chapters/04-operations-courantes.md)
 * [Interactions avec les fichiers](chapters/05-interactions-fichiers.md)
+* [WinForms et multithreading](chapters/06-winforms-multithreading.md)
 
