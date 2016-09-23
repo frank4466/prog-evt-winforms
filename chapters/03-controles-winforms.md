@@ -8,7 +8,12 @@ L'objectif de ce chapitre est de présenter succinctement quelques contrôles Wi
 
 Comme indiqué précédemment, il est fortement recommandé de donner un nom parlant à un contrôle immédiatement après son ajout au formulaire. Cela augmente fortement la lisibilité du code utilisant ce contrôle.
 
-On peut aller plus loin et choisir une convention de nommage qui permet d'identifier clairement le type du contrôle. Le reste de ce chapitre fait des propositions, mais il n'existe pas de consensus à ce sujet. L'important est de rester cohérent dans la convention choisie afin que le code soit uniforme.
+On peut aller plus loin et choisir une convention de nommage qui permet d'identifier clairement le type du contrôle. Il n'existe pas de consensus à ce sujet : 
+
+* On peut rester générique et suffixer tous les contrôles par `Ctrl`.
+* On peut choisir un suffixe différent pour chaque type de contrôle.
+
+L'important est de rester cohérent dans la convention choisie afin que le code soit uniforme.
 
 ## Affichage de texte
 
@@ -22,18 +27,21 @@ Il dispose d'une propriété **Text** qui permet de récupérer ou de définir l
 
 Le contrôle **TextBox** crée une zone de saisie de texte. 
 
-> On peut donner à un contrôle de ce type un nom finissant par `Box`. Exemple : `loginTB`.
+> On peut donner à un contrôle de ce type un nom finissant par `TB`. Exemple : `loginTB`.
 
 Voici ses propriétés importantes :
 
 * **Text** permet de récupérer ou de définir la valeur saisie.
+* **Multiline** précise si le texte saisi peut comporter une ou plusieurs lignes.
 * **Enabled** permet, quand elle vaut `true`, d'en faire une zone en lecture seule (saisie impossible).
+
+> Le contrôle **RichTextBox** est une version enrichie de ce contrôle.
 
 ## Liste déroulante
 
 Le contrôle **ComboBox** définit une liste déroulante. 
 
-> On peut donner à un contrôle de ce type un nom finissant par `Box`. Exemple : `countryCB`.
+> On peut donner à un contrôle de ce type un nom finissant par `CB`. Exemple : `countryCB`.
 
 Voici ses propriétés importantes :
 * **Items** regroupe ses valeurs sous la forme d'une liste (collection) d'objets. On peut ajouter des valeurs dans la liste déroulante dans le concepteur du formulaire ou via le code.
@@ -65,7 +73,80 @@ private void countryCB_SelectedIndexChanged(object sender, EventArgs e)
 
 ## Liste d'éléments
 
+Le contrôle **ListBox** permet de créer une liste d'éléments.
+
+> On peut donner à un contrôle de ce type un nom finissant par `LB`. Exemple : `hardwareLB`.
+
+Voici ses propriétés importantes :
+* **Items** regroupe ses valeurs sous la forme d'une liste (collection) d'objets. On peut ajouter des valeurs dans la liste déroulante dans le concepteur du formulaire ou via le code.
+* **SelectionMode** permet de choisir si la liste est à sélection simple, multiple ou si la sélection est désactivée.
+* **SelectedIndex** récupère ou définit l'indice de l'élément actuellement sélectionné. Le premier élément correspond à l'indice 0.
+* **SelectedItems** renvoit les éléments actuellement sélectionnés sous la forme d'une liste d'objets.
+
+```csharp
+// Ajoute 4 éléments à la liste
+hardwareLB.Items.Add("PC");
+hardwareLB.Items.Add("Mac");
+hardwareLB.Items.Add("Tablette");
+hardwareLB.Items.Add("Smartphone");
+
+// Sélectionner le 1er élément
+hardwareLB.SelectedIndex = 0;
+```
+
+L'évènement **SelectedIndexChanged** permet de gérer le changement de sélection dans la liste.
+
+```csharp
+// Gère le changement de sélection dans la liste
+private void hardwareLB_SelectedIndexChanged(object sender, EventArgs e)
+{
+    // Parcours de la liste des éléments sélectionnés
+    foreach (string value in hardwareLB.SelectedItems)
+    {
+        // ...
+    }
+}
+```
+
+> Le contrôle **ListView** est une version enrichie de ce contrôle.
+
 ## Bouton
 
-## Menu déroulant
+Le contrôle **Button** permet de créer un bouton.
 
+> On peut donner à un contrôle de ce type un nom finissant par `Btn`. Exemple : `connectBtn`.
+
+Voici ses propriétés importantes :
+* **Text** récupère ou définit le texte affiché dans le bouton.
+* **Enabled** active ou désactive le bouton (clic impossible).
+* **DialogResult** définit le résultat renvoyé lors d'un clic sur le bouton quand le formulaire est affichée de manière modale (voir chapitre suivant).
+
+L'évènement **Click** permet de gérer le clic sur le bouton.
+
+```csharp
+// Gère le clic sur le bouton de connexion
+private void connectBtn_Click(object sender, EventArgs e)
+{
+    // ...
+}
+```
+
+>Les contrôles **CheckBox** et **RadioButton** permettent respectivement de créer une case à cocher et un bouton bouton radio.
+
+## Barre de menus
+
+Le contrôle **MenuStrip** permet de créer une barre de menus déroulants. Une entrée de menu déroulant peut être une commande (**MenuItem**), une liste déroulante, une zone de texte ou un séparateur.
+
+![](../images/menustrip-items.png)
+
+> Dans le cas d'une barre de menus, on peut conserver le nommage des contrôles initial proposé par Visual Studio.
+
+L'évènement **Click** permet de gérer le clic sur une commande du menu déroulant.
+
+```csharp
+// Gère le clic sur la commande Quitter
+private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+{
+    // ...
+}
+```
