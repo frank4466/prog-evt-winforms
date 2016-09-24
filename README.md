@@ -1,20 +1,22 @@
 # Programmation évènementielle avec les WinForms
 
-Ce livre est un support de cours à l'[Ecole Nationale Supérieure de Cognitique](http://www.ensc.fr).
+Ce livre est un support de cours à l'[Ecole Nationale Supérieure de Cognitique](http://www.ensc.fr). 
 
 ![](images/ensc-logo.png)
+
+Les exemples de code associés sont [disponibles en ligne](https://github.com/bpesquet/prog-evt-winforms-exemples).
 
 ## Résumé
 
 Ce livre aborde la programmation évènementielle et son application dans le cadre de la technologie Microsoft WinForms.
 
-* Paradigme de programmation évènementielle.
+* Introduction à la programmation évènementielle.
 * La technologie WinForms.
-* Les principaux contrôles WinForms.
-* Opérations courantes avec les Winforms.
-* Lecture et écriture dans des fichiers.
-* Gestion des erreurs.
+* Aperçu des principaux contrôles WinForms.
+* Opérations courantes avec les WinForms.
+* Interactions avec des fichiers.
 * WinForms et multithreading.
+* Gestion des erreurs.
 
 ## Pré-requis
 
