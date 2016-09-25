@@ -11,7 +11,7 @@ Le concepteur de formulaire permet de placer précisément un contrôle sur un f
 * Uniformisation de l'espace entre plusieurs contrôles.
 * ...
 
-![](../images/barre dispo.png)
+![](../images/barre-dispo.png)
 
 ## Gérer le redimensionnement d'un formulaire
 
@@ -159,6 +159,30 @@ if (subForm.ShowDialog() == DialogResult.OK)
     this.Text = "Bienvenue, " + login;
 }
 ```
+
+## Gérer les erreurs
+
+Dans toute application, des évènements imprévus peuvent se produire : absence d'une ressource externe nécessaire (fichier, base de donnée...), bug, etc. Ces évènements se manifestent par la levée d'une exception. Si elle n'est pas gérée, elle se propage et finit par provoquer l'arrêt brutal de l'application.
+
+Une gestion *a minima* des exceptions consiste à placer la ligne `Application.Run(...)` du programme principal dans un bloc `try/catch`. Cela permet de présenter à l'utilisateur un message informatif en cas d'apparition d'une erreur.
+
+```csharp
+static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+    try
+    {
+        Application.Run(new MainForm());
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+```
+
+> Ce mécanisme agira en dernier recours : dans certains scénarios, il sera plus pertinent d'intercepter les exceptions au plus près de leur apparition potentielle.
 
 ## Supprimer manuellement un gestionnaire d'évènement
 

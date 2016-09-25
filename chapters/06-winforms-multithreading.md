@@ -10,7 +10,7 @@ On appelle **thread** (*fil*) un contexte dans lequel s'exécute du code. Chaque
 
 De manire générale, on utilise des threads pour permettre à une application de réaliser plusieurs tâches en parallèle. L'exemple typique est celui d'un navigateur affichant plusieurs onglets tout en téléchargeant un fichier.
 
-## WinForms sans multithreading
+## Les limites d'une application WinForms monothread
 
 Une application WinForms est basée sur le paradigme de la programmation évènementielle : elle réagit à des évènements provenant du système ou de l'utilisateur. Plus techniquement, elle reçoit et traite en permanence des **messages** provenant du système d'exploitation. Voici quelques exemples de messages :
 
@@ -53,7 +53,7 @@ Une meilleure alternative consiste à utiliser la classe **BackgroundWorker**. E
 * L'évènement **ProgressChanged** permet de notifier le formulaire de l'avancement du traitement.
 * L'évènement **RunWorkerCompleted** signale au formulaire la fin du traitement.
 
-Sa méthode `RunWorkerAsync` démarre un nouveau thread et débute l'exécution du traitement défini dans le gestionnaire de **DoWork**.
+Sa méthode `RunWorkerAsync` démarre un nouveau thread et débute l'exécution du traitement défini dans le gestionnaire de **DoWork**. Les gestionnaires des évènements **ProgressChanged** et **RunWorkerCompleted** peuvent accéder aux contrôles du formulaires afin de mettre à jour celui-ci.
 
 L'exemple de code ci-dessous utilise un **BackgroundWorker** dans lequel on simule une opération longue.
 
@@ -76,6 +76,25 @@ private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArg
 ```
 
 Avec cette technique, le thread WinForms principal n'est pas affecté par l'opération en cours et l'application reste réactive.
+
+## Multithreading et gestion des erreurs
+
+Si un évènement inattendu se produit dans un thread et provoque la levée d'une exception, celle-ci va entrainer l'arrêt brutal de l'application. Une solution palliative consiste à placer le code du gestionnaire **DoWork** dans un bloc `try/catch`.
+
+```csharp
+private void worker_DoWork(object sender, DoWorkEventArgs e)
+{
+    try
+    {
+        // Code susceptible de lever des exceptions
+        // ...
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+```
 
 ## Pour aller plus loin
 
