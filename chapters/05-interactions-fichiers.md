@@ -172,7 +172,7 @@ using Newtonsoft.Json;
 
 ### Ecriture
 
-Voici un exemple de sérialisation d'un objet vers un fichier XML.
+Voici un exemple de sérialisation d'un objet vers un fichier JSON.
 
 ```csharp
 // Sauvegarde l'objet hotel dans le fichier "hotel.json"
