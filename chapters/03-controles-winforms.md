@@ -33,7 +33,7 @@ Voici ses propriétés importantes :
 
 * **Text** permet de récupérer ou de définir la valeur saisie.
 * **Multiline** précise si le texte saisi peut comporter une ou plusieurs lignes.
-* **Enabled** permet, quand elle vaut `true`, d'en faire une zone en lecture seule (saisie impossible).
+* **ReadOnly** permet, quand elle vaut `true`, d'en faire une zone en lecture seule (saisie impossible).
 
 > Le contrôle **RichTextBox** est une version enrichie de ce contrôle.
 
