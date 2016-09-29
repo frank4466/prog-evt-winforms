@@ -40,7 +40,7 @@ Chaque formulaire WinForms est décrit par deux fichiers :
 * Un fichier `.Designer.cs` qui contient le code généré automatiquement par l'IDE lors de la conception graphique du formulaire. 
 * Un fichier `.cs` qui contient le code C# écrit par le développeur pour faire réagir le formulaire aux évènements qui se produisent. Ce fichier est appelé "*code behind*".
 
-> Après chaque création de formulaire, une bonne pratique consiste à lui donner immédiatement un nom plus parlant, par exemple `MainForm` pour le formulaire principal. Pour cela, faites un clid droit sur le formulaire dans l'arborescence, puis choisissez **Renommer**.
+> Après chaque création de formulaire, une bonne pratique consiste à lui donner immédiatement un nom plus parlant, par exemple `MainForm` pour le formulaire principal. Pour cela, faites un clic droit sur le formulaire dans l'arborescence, puis choisissez **Renommer**.
 
 Le fichier "code behind" `.cs` associé à un formulaire est accessible en faisant un clic droit sur le formulaire puis en choisissant **Afficher le code**, ou à l'aide du raccourci clavier **F7**. Voici son contenu initial.
 
