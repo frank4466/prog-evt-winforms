@@ -14,14 +14,14 @@ On appelle **sérialisation** la transformation d'une information en mémoire so
 
 Les données métier de note application seront des chambres d'hôtel. Elles sont modélisées sous forme de classes de la manière suivante.
 
-![](../images/uml-hotel.jpg)
+![](../images/uml-hotel.png)
 
 Un hôtel a un nom et comporte une liste de chambres. Chaque chambre possède un numéro, un étage et l'indication de sa disponibilité. Une chambre est vide par défaut.
 
 Voici le code de création des données de test.
 
 ```csharp
-Hotel hotel = new Hotel("Chealsea Hotel");
+Hotel hotel = new Hotel("Chelsea Hotel");
 hotel.Rooms.Add(new Room(1, 0));
 hotel.Rooms.Add(new Room(2, 1));
 hotel.Rooms.Add(new Room(3, 1));
@@ -109,7 +109,7 @@ Le fichier résultat `hotel.xml` contient les données stockées dans les classe
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Chealsea Hotel</Name>
+  <Name>Chelsea Hotel</Name>
   <Rooms>
     <Room>
       <Number>1</Number>
@@ -185,7 +185,7 @@ Le fichier résultat `hotel.json` contient les données stockées dans les class
 
 ```json
 {
-    "Name": "Chealsea Hotel",
+    "Name": "Chelsea Hotel",
     "Rooms": [
         {
             "Number": 1,

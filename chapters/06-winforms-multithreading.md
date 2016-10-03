@@ -8,7 +8,7 @@ L'objectif de ce chapitre est de comprendre comment faire réaliser plusieurs t�
 
 On appelle **thread** (*fil*) un contexte dans lequel s'exécute du code. Chaque application en cours d'exécution utilise au minimum un thread. Une application gérant plusieurs threads est dite *multithread*.
 
-De manire générale, on utilise des threads pour permettre à une application de réaliser plusieurs tâches en parallèle. L'exemple typique est celui d'un navigateur affichant plusieurs onglets tout en téléchargeant un fichier.
+De manière générale, on utilise des threads pour permettre à une application de réaliser plusieurs tâches en parallèle. L'exemple typique est celui d'un navigateur affichant plusieurs onglets tout en téléchargeant un fichier.
 
 ## Les limites d'une application WinForms monothread
 
