@@ -4,8 +4,6 @@ Ce livre est un support de cours à l'[Ecole Nationale Supérieure de Cognitique
 
 ![](images/ensc-logo.png)
 
-Les exemples de code associés sont [disponibles en ligne](https://github.com/bpesquet/prog-evt-winforms/tree/master/examples).
-
 ## Résumé
 
 Ce livre aborde la programmation évènementielle et son application dans le cadre de la technologie Microsoft WinForms.
@@ -16,9 +14,11 @@ Ce livre aborde la programmation évènementielle et son application dans le cad
 * Opérations courantes avec les WinForms.
 * WinForms et multithreading.
 
+Les exemples de code associés sont [disponibles en ligne](https://github.com/bpesquet/prog-evt-winforms/tree/master/examples).
+
 ## Pré-requis
 
-L'étude des exemples de code de ce livre nécessite une connaissance minimale de la programmation orientée objet et du langage C#.
+La lecture de ce livre nécessite une connaissance de la programmation orientée objet et du langage C#.
 
 > Au besoin, consultez le livre [Programmation orientée objet en C#](https://www.gitbook.com/book/bpesquet/programmation-orientee-objet-csharp/).
 
