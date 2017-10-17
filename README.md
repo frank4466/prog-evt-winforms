@@ -1,10 +1,10 @@
 # Programmation évènementielle avec les WinForms
 
-Ce livre est un support de cours à l'[Ecole Nationale Supérieure de Cognitique](http://www.ensc.fr). 
+Ce livre est un support de cours à l'[Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr).
 
 ![](images/ensc-logo.png)
 
-Les exemples de code associés sont [disponibles en ligne](https://github.com/bpesquet/prog-evt-winforms-exemples).
+Les exemples de code associés sont [disponibles en ligne](https://github.com/bpesquet/prog-evt-winforms/tree/master/examples).
 
 ## Résumé
 
