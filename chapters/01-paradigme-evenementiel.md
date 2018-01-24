@@ -34,4 +34,4 @@ La programmation évènementielle s'oppose donc à la programmation séquentiell
 
 La programmation évènementielle est fondée sur les **évènements**. Un évènement représente un message envoyé à l'application. Les évènements peuvent être d'origines diverses : action de l'utilisateur (déplacement de la souris, clic sur un bouton, appui sur une touche du clavier, etc) ou évènement système (chargement d'un fichier, déclenchement d'une minuterie, etc).
 
-Le plus souvent, un évènement contient des informations qui dépendent du type d'évènement. Ces données peuvent être utilisées par l'application pour réagir au mieux. Elle shosit les évènements auxquels elle va répondre par un traitement particulier, et ignore tous les autres.
+Le plus souvent, un évènement contient des informations qui dépendent du type d'évènement. Ces données peuvent être utilisées par l'application pour réagir au mieux. Elle choisit les évènements auxquels elle va répondre par un traitement particulier, et ignore tous les autres.
